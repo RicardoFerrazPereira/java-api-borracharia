@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import javax.mail.MessagingException;
 
+import org.serratec.java2backend.borracharia.dto.RelatorioDTO;
 import org.serratec.java2backend.borracharia.dto.ServicoDTO;
 import org.serratec.java2backend.borracharia.exception.EmailException;
 import org.serratec.java2backend.borracharia.exception.ServicoException;
@@ -123,6 +124,10 @@ public class ServicoService {
 		servicoRepository.saveAll(listaServicoModel);
 		return "##  Serviços cadastrados com sucesso!  ##";
 		
+	}
+	
+	public List<RelatorioDTO> relatorio() {
+		return servicoRepository.relatorio();
 	}
 	
 	

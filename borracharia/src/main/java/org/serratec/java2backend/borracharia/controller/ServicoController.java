@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.mail.MessagingException;
 
+import org.serratec.java2backend.borracharia.dto.RelatorioDTO;
 import org.serratec.java2backend.borracharia.dto.ServicoDTO;
 import org.serratec.java2backend.borracharia.exception.EmailException;
 import org.serratec.java2backend.borracharia.exception.ServicoException;
@@ -54,6 +55,11 @@ public class ServicoController {
 	public ResponseEntity<String> salvarVarios(@RequestBody List<ServicoDTO> listaServicoDTO){
 		return ResponseEntity.ok(servicoService.salvarMuitos(listaServicoDTO));
 		
+	}
+	
+	@GetMapping("/relatorio")
+	public List<RelatorioDTO> relatorio() {
+		return servicoService.relatorio();
 	}
 
 }
